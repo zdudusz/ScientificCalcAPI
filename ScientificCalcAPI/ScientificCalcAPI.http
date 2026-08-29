@@ -1,0 +1,6 @@
+@ScientificCalcAPI_HostAddress = http://localhost:5290
+
+GET {{ScientificCalcAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

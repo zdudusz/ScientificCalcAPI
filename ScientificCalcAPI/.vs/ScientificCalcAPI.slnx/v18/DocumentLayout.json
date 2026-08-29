@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{153D0459-F7DF-4CE4-BB5B-8C1FE874D675}|ScientificCalcAPI.csproj|c:\\calculadoracinetificaapi\\src\\scientificcalcapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{153D0459-F7DF-4CE4-BB5B-8C1FE874D675}|ScientificCalcAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{153D0459-F7DF-4CE4-BB5B-8C1FE874D675}|ScientificCalcAPI.csproj|c:\\calculadoracinetificaapi\\src\\scientificcalcapi\\scientificcalcapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{153D0459-F7DF-4CE4-BB5B-8C1FE874D675}|ScientificCalcAPI.csproj|solutionrelative:scientificcalcapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88A1ACA-834E-4B33-AF98-9DA5239A35D0}|..\\ScientificCalculatorApi.Infraestructure\\ScientificCalculatorApi.Infraestructure.csproj|c:\\calculadoracinetificaapi\\src\\scientificcalculatorapi.infraestructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A96CC9B6-F209-4C2D-BA25-C68C19AF1CA3}|..\\ScientificCalcApi.Shared\\ScientificCalcApi.Shared.csproj|c:\\calculadoracinetificaapi\\src\\scientificcalcapi.shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC6AB44-5991-454F-8346-92BFF84D0CC7}|..\\ScientificCalcAPI.core\\ScientificCalcAPI.core.csproj|c:\\calculadoracinetificaapi\\src\\scientificcalcapi.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E820AC9-8CD7-473F-8477-30B5E2F857DD}|..\\ScientificCalc.Application\\ScientificCalc.Application.csproj|c:\\calculadoracinetificaapi\\src\\scientificcalc.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ScientificCalcAPI",
+              "DocumentMoniker": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcAPI\\ScientificCalcAPI.csproj",
+              "RelativeDocumentMoniker": "ScientificCalcAPI.csproj",
+              "ToolTip": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcAPI\\ScientificCalcAPI.csproj",
+              "RelativeToolTip": "ScientificCalcAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-29T20:33:43.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalculatorApi.Infraestructure\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\ScientificCalculatorApi.Infraestructure\\Class1.cs",
+              "ToolTip": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalculatorApi.Infraestructure\\Class1.cs",
+              "RelativeToolTip": "..\\ScientificCalculatorApi.Infraestructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T20:28:59.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcApi.Shared\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\ScientificCalcApi.Shared\\Class1.cs",
+              "ToolTip": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcApi.Shared\\Class1.cs",
+              "RelativeToolTip": "..\\ScientificCalcApi.Shared\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T20:28:20.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcAPI.core\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\ScientificCalcAPI.core\\Class1.cs",
+              "ToolTip": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcAPI.core\\Class1.cs",
+              "RelativeToolTip": "..\\ScientificCalcAPI.core\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T20:27:20.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalc.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\ScientificCalc.Application\\Class1.cs",
+              "ToolTip": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalc.Application\\Class1.cs",
+              "RelativeToolTip": "..\\ScientificCalc.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T20:26:47.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\CalculadoraCinetificaAPI\\src\\ScientificCalcAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBEAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T20:21:35.136Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

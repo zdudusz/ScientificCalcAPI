@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Itens de Solução/" />
+  <Project Path="../ScientificCalc.Application/ScientificCalcApi.Application.csproj" />
+  <Project Path="../ScientificCalcAPI.core/ScientificCalcAPI.Core.csproj" />
+  <Project Path="../ScientificCalcApi.Shared/ScientificCalcApi.Shared.csproj" />
+  <Project Path="../ScientificCalculatorApi.Infraestructure/ScientificCalculatorApi.Infraestructure.csproj" />
+  <Project Path="ScientificCalcAPI.csproj" />
+</Solution>
