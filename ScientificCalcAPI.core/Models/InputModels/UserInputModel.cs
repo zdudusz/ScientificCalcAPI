@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ScientificCalcAPI.Core.Models.InputModels
-{
-    public class UserInputModel(string name, string email, string passwordHash, DateTime createdAt)
+{// Input model para receber os dados do usuário a ser cadastrado
+    public class UserInputModel(string name, string email, string password, DateTime createdAt) 
     {
-
+        
         public string Name { get;} = name;
 
         public string Email { get;} = email!;
 
-        public string PasswordHash { get; } = passwordHash!;
-
-        public DateTime CreatedAt { get; } = createdAt;
+        public string Password { get;} = password!;
 
     }
 }
