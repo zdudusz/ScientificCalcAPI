@@ -8,10 +8,11 @@ namespace ScientificCalculatorApi.Infraestructure.Configurations
     {
         public void Configure(EntityTypeBuilder<User> entity)
         {
-            entity.HasKey(e => e.Id).HasName("Users_pkey");
+            entity.HasKey(e => e.Id).HasName("Users_pkey"); //Configura a chave primária da tabela Users
 
-            entity.HasIndex(e => e.Email, "Users_Email_key").IsUnique();
+            entity.HasIndex(e => e.Email, "Users_Email_key").IsUnique(); //Configura um índice único na coluna Email da tabela Users
 
+            // Configura as propriedades da entidade User
             entity.Property(e => e.CreatedAt).HasColumnType("timestamp without time zone");
             entity.Property(e => e.Email).HasMaxLength(300);
             entity.Property(e => e.Name).HasMaxLength(200);

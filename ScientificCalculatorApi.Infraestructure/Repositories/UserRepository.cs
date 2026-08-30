@@ -1,5 +1,6 @@
 ﻿using ScientificCalcAPI.Core.Interface.Repositories;
 using ScientificCalcAPI.Core.Entities;
+using ScientificCalculatorApi.Infraestructure;
 
 
 namespace ScientificCalculatorApi.Infrastructure.Repositories
@@ -12,7 +13,7 @@ namespace ScientificCalculatorApi.Infrastructure.Repositories
         public async Task<int> CadastrarAsync(User user) {
            var entidade = await _dbContext.Users.AddAsync(user);
             
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync(); // Salva as alterações no banco de dados e aguarda a conclusão da operação de forma assíncrona
 
             return entidade.Entity.Id;
         }

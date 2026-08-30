@@ -8,10 +8,10 @@ namespace ScientificCalculatorApi.Infraestructure.Configurations
     {
         public void Configure(EntityTypeBuilder<CalculationHistory> entity)
         {
-            entity.HasKey(e => e.Id).HasName("CalculationHistory_pkey");
+            entity.HasKey(e => e.Id).HasName("CalculationHistory_pkey"); //Configura a chave primária da tabela CalculationHistory
 
             entity.ToTable("CalculationHistory");
-
+            // Configura as propriedades da entidade CalculationHistory
             entity.Property(e => e.CreatedAt).HasColumnType("timestamp without time zone");
             entity.Property(e => e.Operation).HasMaxLength(50);
             entity.Property(e => e.Parameters).HasMaxLength(100);

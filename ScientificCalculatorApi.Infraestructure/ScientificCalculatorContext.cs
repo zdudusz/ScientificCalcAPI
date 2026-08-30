@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 
 namespace ScientificCalculatorApi.Infraestructure
-{
+{// Contexto do banco de dados para a aplicação ScientificCalculatorApi
     public class ScientificCalculatorContext(DbContextOptions options) : DbContext(options)
     {
         public virtual DbSet<CalculationHistory> CalculationHistories { get; set; }
