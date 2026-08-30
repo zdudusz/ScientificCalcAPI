@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ScientificCalculatorApi.Infraestructure.Scaffold;
+﻿namespace ScientificCalcAPI.Core.Entities;
 
 public partial class User
 {
@@ -16,6 +13,4 @@ public partial class User
     public DateTime CreatedAt { get; set; }
 
     public DateTime UpdatedAt { get; set; }
-
-    public virtual ICollection<CalculationHistory> CalculationHistories { get; set; } = new List<CalculationHistory>();
 }
