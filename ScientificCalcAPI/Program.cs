@@ -1,3 +1,4 @@
+using ScientificCalcApi.Application.Applications;
 using ScientificCalculatorApi.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,9 @@ builder.Services.AddControllers();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-builder.Services.AddInfraestructure();
+builder.Services
+    .AddInfraestructure()
+    .AddApplication();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
