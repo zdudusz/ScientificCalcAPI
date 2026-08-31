@@ -10,7 +10,7 @@ namespace ScientificCalcApi.Application.Applications
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-
+            // Adiciona a implementação da interface ICadastrarUserApplication ao container de injeção de dependência
             services.AddScoped<ICadastrarUserApplication, CadastrarUserApplication>();
             return services;
         }

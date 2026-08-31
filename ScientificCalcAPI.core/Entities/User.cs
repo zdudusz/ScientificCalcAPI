@@ -7,8 +7,8 @@ public class User
         Name = name;
         Email = email;
         PasswordHash = passwordHash;
-        CreatedAt = DateTime.UtcNow; //inicio já com a data de criação do usuário
-        UpdatedAt = DateTime.UtcNow;
+        CreatedAt = DateTime.Now; //inicio já com a data de criação do usuário
+        UpdatedAt = DateTime.Now;
     }
 
     public int Id { get; set; }
