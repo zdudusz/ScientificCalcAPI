@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using ScientificCalcApi.Application.Applications;
-using ScientificCalculatorApi.Infraestructure;
 using Scalar.AspNetCore;
+using ScientificCalcApi.Application.Applications;
+using ScientificCalcAPI.Filters;
+using ScientificCalculatorApi.Infraestructure;
+using System.Text;
 
 public partial class Program
 {
@@ -19,17 +21,45 @@ public partial class Program
         builder.Services.AddControllers();
 
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-        builder.Services.AddOpenApi();
+        builder.Services.AddOpenApi(options =>
+        { 
+        options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+        }
+            
+            );
         builder.Services
             .AddInfraestructure()
             .AddApplication();
+        builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
+    };
+});
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.MapOpenApi();
-            app.MapScalarApiReference();
+            app.MapScalarApiReference(options=>{
+                options.Title = "Scientific Calculator API";
+                options.Theme = ScalarTheme.Purple;
+
+            });
         }
 
         app.UseHttpsRedirection();

@@ -1,0 +1,29 @@
+name: calculadora_cientifica_api-db
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: calculator
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: CALCDB
+    ports:
+      - "5490:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./CALCDB.sql:/docker-entrypoint-initdb.d/CALCDB.sql
+    restart: always
+  api:
+    build:
+      context: "."
+      dockerfile: "ScientificCalcAPI/Dockerfile"
+    ports:
+     - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - "ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=CALCDB;Username=calculator;Password=admin"
+
+volumes:
+  postgres_data:
