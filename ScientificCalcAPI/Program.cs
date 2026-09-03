@@ -29,7 +29,7 @@ public partial class Program
             
             );
         builder.Services
-            .AddInfraestructure()
+            .AddInfraestructure(builder.Configuration)
             .AddApplication();
         builder.Services.AddAuthentication(options =>
         {
@@ -59,7 +59,6 @@ public partial class Program
             app.MapScalarApiReference(options=>{
                 options.Title = "Scientific Calculator API";
                 options.Theme = ScalarTheme.Purple;
-
             });
         }
 
