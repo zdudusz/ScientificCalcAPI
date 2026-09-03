@@ -1,7 +1,7 @@
 ﻿using ScientificCalcAPI.Core.Interface.Repositories;
 using ScientificCalcAPI.Core.Entities;
 using ScientificCalculatorApi.Infraestructure;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace ScientificCalculatorApi.Infrastructure.Repositories
 {
@@ -16,6 +16,10 @@ namespace ScientificCalculatorApi.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync(); // Salva as alterações no banco de dados e aguarda a conclusão da operação de forma assíncrona
 
             return entidade.Entity.Id;
+        }
+        public async Task<User?> BuscarPorEmail(string email)
+        {
+           return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email); // Busca um usuário pelo email e retorna o hash da senha do usuário encontrado
         }
     }
 }
