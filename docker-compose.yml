@@ -24,6 +24,7 @@ services:
       - postgres
     environment:
       - "ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=CALCDB;Username=calculator;Password=admin"
+      - ASPNETCORE_ENVIRONMENT=Development
 
 volumes:
   postgres_data:

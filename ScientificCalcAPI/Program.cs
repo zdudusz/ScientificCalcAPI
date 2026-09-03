@@ -19,6 +19,7 @@ public partial class Program
 
 
         builder.Services.AddControllers();
+        builder.Services.AddScoped<CalculatorApplication>();// Adicionando o serviço CalculatorApplication ao contêiner de injeção de dependência
 
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi(options =>
