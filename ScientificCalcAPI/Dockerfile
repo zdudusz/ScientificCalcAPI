@@ -12,11 +12,22 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ScientificCalcAPI.csproj", "."]
-RUN dotnet restore "./ScientificCalcAPI.csproj"
+# Copia todos os .csproj mantendo a estrutura de pastas
+COPY ["ScientificCalcAPI/ScientificCalcAPI.csproj", "ScientificCalcAPI/"]
+COPY ["ScientificCalc.Application/ScientificCalcApi.Application.csproj", "ScientificCalc.Application/"]
+COPY ["ScientificCalcAPI.core/ScientificCalcAPI.Core.csproj", "ScientificCalcAPI.core/"]
+COPY ["ScientificCalcApi.Shared/ScientificCalcApi.Shared.csproj", "ScientificCalcApi.Shared/"]
+COPY ["ScientificCalculatorApi.Infraestructure/ScientificCalculatorApi.Infraestructure.csproj", "ScientificCalculatorApi.Infraestructure/"]
+
+# Restore usando o projeto principal
+RUN dotnet restore "ScientificCalcAPI/ScientificCalcAPI.csproj"
+
+# Copia todo o código fonte
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "./ScientificCalcAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# Build
+WORKDIR "/src/ScientificCalcAPI"
+RUN dotnet build "ScientificCalcAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # Esta fase é usada para publicar o projeto de serviço a ser copiado para a fase final
 FROM build AS publish
