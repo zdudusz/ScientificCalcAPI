@@ -4,10 +4,8 @@ using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 using ScientificCalcApi.Application.Applications;
 using ScientificCalcApi.Application.Services;
-using ScientificCalcAPI.Core.Interface.Repositories;
 using ScientificCalcAPI.Filters;
 using ScientificCalculatorApi.Infraestructure;
-using ScientificCalculatorApi.Infraestructure.Repositories;
 using System.Text;
 
 public partial class Program
@@ -25,7 +23,6 @@ public partial class Program
         builder.Services.AddScoped<CalculatorApplication>();// Adicionando o serviço CalculatorApplication ao contêiner de injeção de dependência
         builder.Services.AddScoped<LoginApplication>();// Adicionando o serviço LoginApplication ao contêiner de injeção de dependência
         builder.Services.AddScoped<TokenService>(); // Adicionando o serviço TokenService ao contêiner de injeção de dependência
-        services.AddScoped<ICalculationHistoryRepository, CalculationHistoryRepository>(); // Adicionando a implementação da interface ICalculationHistoryRepository ao contêiner de injeção de dependência
 
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi(options =>
