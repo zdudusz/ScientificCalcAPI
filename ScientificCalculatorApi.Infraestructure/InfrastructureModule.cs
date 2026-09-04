@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScientificCalcAPI.Core.Interface.Repositories;
+using ScientificCalculatorApi.Infraestructure.Repositories;
 using ScientificCalculatorApi.Infrastructure.Repositories;
 
 namespace ScientificCalculatorApi.Infraestructure
@@ -14,6 +15,7 @@ namespace ScientificCalculatorApi.Infraestructure
             services.AddDbContext<ScientificCalculatorContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserRepository, UserRepository>(); // Adiciona a implementação da interface IUserRepository ao container de injeção de dependência
+            services.AddScoped<ICalculationHistoryRepository, CalculationHistoryRepository>(); // Adiciona a implementação da interface ICalculationHistoryRepository ao container de injeção de dependência
             return services;
         }
     }
