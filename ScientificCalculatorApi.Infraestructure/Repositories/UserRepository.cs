@@ -19,7 +19,7 @@ namespace ScientificCalculatorApi.Infrastructure.Repositories
         }
         public async Task<User?> BuscarPorEmail(string email)
         {
-           return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email); // Busca um usuário pelo email e retorna o hash da senha do usuário encontrado
+           return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email); // Busca um usuário pelo email
         }
     }
 }
