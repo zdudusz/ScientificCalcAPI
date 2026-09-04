@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScientificCalcApi.Application.Applications;
 using ScientificCalcApi.Application.DTOs;
 using ScientificCalcAPI.Core.Interface.Applications;
+using System.Security.Claims;
 
 namespace ScientificCalcAPI.Controllers
 {
@@ -38,9 +39,10 @@ namespace ScientificCalcAPI.Controllers
         /// - exp: exponencial e^x (ex: [2])
         /// </remarks>
         [HttpPost]
-        public IActionResult Calculate([FromBody] CalculationRequestDto request)
+        public async Task<IActionResult> Calculate([FromBody] CalculationRequestDto request)
         {
-          var result = _calculatorApplication.Calculate(request.Operation, request.Operands);
+          var userId = User.FindFirst(ClaimTypes.NameIdentifier);
+            var result = await _calculatorApplication.Calculate(request.Operation, request.Operands, int.Parse(userId.Value));
             return Ok(result);
         }
     }

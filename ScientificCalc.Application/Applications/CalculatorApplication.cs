@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using ScientificCalcApi.Application.DTOs;
+using ScientificCalcAPI.Core.Entities;
+using ScientificCalcAPI.Core.Interface.Repositories;
 
 namespace ScientificCalcApi.Application.Applications
 {
     public class CalculatorApplication
     {
-        public double Calculate(string operation, IEnumerable<double> operands)
+        private readonly ICalculationHistoryRepository _calculationHistoryRepository;
+        public CalculatorApplication(ICalculationHistoryRepository calculationHistoryRepository)
+        {
+            _calculationHistoryRepository = calculationHistoryRepository;
+        }
+        public async Task<double> Calculate(string operation, IEnumerable<double> operands, int userId)
         {
             var result = 0.0;
             switch (operation.ToLower())
@@ -48,7 +55,10 @@ namespace ScientificCalcApi.Application.Applications
                 default:
                     throw new ArgumentException($"Operação '{operation}' não reconhecida.");
             }
-            return (result);
+            var parametersJson = System.Text.Json.JsonSerializer.Serialize(operands); // Serializa os operandos em formato JSON para salvar no banco de dados
+            CalculationHistory calculationHistory = new CalculationHistory(userId, operation, parametersJson, (decimal)result);
+            await _calculationHistoryRepository.SalvarAsync(calculationHistory);
+            return result;
         }
     }
 }
