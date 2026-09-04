@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ScientificCalcApi.Application.Applications;
 using ScientificCalcApi.Application.DTOs;
 using ScientificCalcAPI.Core.Interface.Applications;
 
 namespace ScientificCalcAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class CalculatorController : MainController
@@ -36,7 +38,6 @@ namespace ScientificCalcAPI.Controllers
         /// - exp: exponencial e^x (ex: [2])
         /// </remarks>
         [HttpPost]
-        
         public IActionResult Calculate([FromBody] CalculationRequestDto request)
         {
           var result = _calculatorApplication.Calculate(request.Operation, request.Operands);
