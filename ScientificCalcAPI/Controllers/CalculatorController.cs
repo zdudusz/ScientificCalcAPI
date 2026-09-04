@@ -7,7 +7,7 @@ namespace ScientificCalcAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CalculatorController : ControllerBase
+    public class CalculatorController : MainController
     {
         private readonly CalculatorApplication _calculatorApplication;
 
