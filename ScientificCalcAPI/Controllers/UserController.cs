@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScientificCalcApi.Application.Applications;
+using ScientificCalcApi.Application.DTOs;
 using ScientificCalcAPI.Core.Interface.Applications;
 using ScientificCalcAPI.Core.Models.InputModels;
 
@@ -28,26 +29,26 @@ namespace ScientificCalcAPI.Controllers
         }
         [HttpPut("email")]
         [Authorize]
-        public async Task<IActionResult> AtualizarEmailAsync([FromBody] string newEmail)
+        public async Task<IActionResult> AtualizarEmailAsync([FromBody] UpdateEmailDto updateEmailDto)
         {// Endpoint para atualizar o email do usuário logado
             var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-            await _userApplication.AlterarEmail(int.Parse(userIdClaim.Value), newEmail);
+            await _userApplication.AlterarEmail(int.Parse(userIdClaim.Value), updateEmailDto.NewEmail);
             return Ok();
         }
         [HttpPut("password")]
         [Authorize]
-        public async Task<IActionResult> AtualizarPasswordAsync([FromBody] string newPassword)
+        public async Task<IActionResult> AtualizarPasswordAsync([FromBody] UpdatePasswordDto updatePasswordDto)
         {// Endpoint para atualizar a senha do usuário logado
             var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-            await _userApplication.AlterarPassword(int.Parse(userIdClaim.Value), newPassword);
+            await _userApplication.AlterarPassword(int.Parse(userIdClaim.Value), updatePasswordDto.NewPassword);
             return Ok();
         }
         [HttpPut("name")]
         [Authorize]
-        public async Task<IActionResult> AtualizarNameAsync([FromBody] string newName)
+        public async Task<IActionResult> AtualizarNameAsync([FromBody] UpdateNameDto updateNameDto)
         {// Endpoint para atualizar o nome do usuário logado
             var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-            await _userApplication.AlterarNome(int.Parse(userIdClaim.Value), newName);
+            await _userApplication.AlterarNome(int.Parse(userIdClaim.Value), updateNameDto.NewName);
             return Ok();
         }
     }
