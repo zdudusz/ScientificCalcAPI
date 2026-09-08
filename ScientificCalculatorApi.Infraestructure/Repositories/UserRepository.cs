@@ -21,5 +21,38 @@ namespace ScientificCalculatorApi.Infrastructure.Repositories
         {
            return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email); // Busca um usuário pelo email
         }
+
+        public async Task AlterarNome(int userId, string newName)
+        {
+            var user = await _dbContext.Users.FindAsync(userId); // Busca o usuário pelo ID
+            if(user!=null)
+            {
+                user.UpdateName(newName);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+        public async Task AlterarEmail(int userId, string newEmail)
+        { 
+            var user = await _dbContext.Users.FindAsync(userId);
+            if (user != null) 
+            { 
+            user.UpdateEmail(newEmail);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+        public async Task AlterarPassword(int userId,string newPasswordHash) 
+        {
+            var user = await _dbContext.Users.FindAsync(userId);
+            if(user!=null)
+            {
+                user.UpdatePassword(newPasswordHash);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+        public async Task<User?> BuscarPorId(int userId) 
+        { 
+            var user = await _dbContext.Users.FindAsync(userId);
+            return user;
+        } 
     }
 }
