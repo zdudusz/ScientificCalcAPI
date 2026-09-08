@@ -20,13 +20,13 @@ namespace ScientificCalcApi.Application.Applications
             return await _repository.ListarPorUsuarioAsync(userId);
         }
 
-        public async Task DeletarAsync(int id)
+        public async Task DeletarAsync(int id, int userId)
         {
-            await _repository.DeletarAsync(id);
+            await _repository.DeletarAsync(id, userId);
         }
-        public async Task DeletarTodosAsync(int Userid)
+        public async Task DeletarTodosAsync(int userId)
         {
-            await _repository.DeletarTodosAsync(Userid);
+            await _repository.DeletarTodosAsync(userId);
         }
 
     }

@@ -17,13 +17,17 @@ namespace ScientificCalculatorApi.Infraestructure.Repositories
         }
 
 
-        public async Task DeletarAsync(int id)
+        public async Task DeletarAsync(int id, int userId)
         {
-           var user = await _dbContext.CalculationHistories.FirstOrDefaultAsync(x => x.Id == id);
+            var user = await _dbContext.CalculationHistories.FirstOrDefaultAsync(x => x.Id == id && x.UserId == userId); //busca o registro de histórico de cálculo pelo id e userId
             if (user != null)
             {
                 _dbContext.CalculationHistories.Remove(user); //remove o registro de histórico de cálculo encontrado
                 await _dbContext.SaveChangesAsync();
+            }
+            else
+            {
+                throw new Exception("Registro de histórico de cálculo não encontrado para o usuário especificado.")
             }
         }
 

@@ -21,7 +21,7 @@ namespace ScientificCalcAPI.Controllers
         public async Task<IActionResult> GetHistory()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier);
-            var history = await _calculationHistoryApplication.ListarPorUsuarioAsync(int.Parse(userId.Value));
+            var history = await _calculationHistoryApplication.ListarPorUsuarioAsync(int.Parse(userId.Value)); //Busca o historico pelo id do usuario logado
             return Ok(history);
         }
 
@@ -29,7 +29,8 @@ namespace ScientificCalcAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHistoryItem(int id)
         {
-            await _calculationHistoryApplication.DeletarAsync(id);
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier);
+            await _calculationHistoryApplication.DeletarAsync(id, int.Parse(userId.Value)); //Deleta o item do historico pelo id do usuario logado e pelo id do item
             return Ok();
         }
 
@@ -37,7 +38,7 @@ namespace ScientificCalcAPI.Controllers
         public async Task<IActionResult> DeleteAllHistory()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier);
-            await _calculationHistoryApplication.DeletarTodosAsync(int.Parse(userId.Value));
+            await _calculationHistoryApplication.DeletarTodosAsync(int.Parse(userId.Value)); //Deleta todo o historico do usuario logado
             return Ok();
         }
     }

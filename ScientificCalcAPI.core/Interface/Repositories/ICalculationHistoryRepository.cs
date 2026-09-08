@@ -9,7 +9,7 @@ namespace ScientificCalcAPI.Core.Interface.Repositories
     {
         public Task SalvarAsync(CalculationHistory calculationHistory);
         public Task<IEnumerable<CalculationHistory>> ListarPorUsuarioAsync(int userId); //retorma uma lista de histórico de cálculos do usuário
-        public Task DeletarAsync(int id);
+        public Task DeletarAsync(int id,int userId);
         public Task DeletarTodosAsync(int userId);
 
     }
