@@ -27,7 +27,7 @@ namespace ScientificCalculatorApi.Infraestructure.Repositories
             }
             else
             {
-                throw new Exception("Registro de histórico de cálculo não encontrado para o usuário especificado.")
+                throw new Exception("Registro de histórico de cálculo não encontrado para o usuário especificado.");
             }
         }
 
