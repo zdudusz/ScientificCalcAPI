@@ -25,6 +25,7 @@ public partial class Program
         builder.Services.AddScoped<TokenService>(); // Adicionando o serviço TokenService ao contêiner de injeção de dependência
         builder.Services.AddScoped<CalculationHistoryApplication>();// Adicionando o serviço CalculationHistoryApplication ao contêiner de injeção de dependência
         builder.Services.AddScoped<CalculationHistoryApplication>(); // Adicionando o serviço CalculationHistoryApplication ao contêiner de injeção de dependência
+        builder.Services.AddScoped<UserApplication>();// Adicionando o serviço UserApplication ao contêiner de injeção de dependência
 
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi(options =>
