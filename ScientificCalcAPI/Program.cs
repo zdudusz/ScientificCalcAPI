@@ -23,6 +23,8 @@ public partial class Program
         builder.Services.AddScoped<CalculatorApplication>();// Adicionando o serviço CalculatorApplication ao contêiner de injeção de dependência
         builder.Services.AddScoped<LoginApplication>();// Adicionando o serviço LoginApplication ao contêiner de injeção de dependência
         builder.Services.AddScoped<TokenService>(); // Adicionando o serviço TokenService ao contêiner de injeção de dependência
+        builder.Services.AddScoped<CalculationHistoryApplication>();// Adicionando o serviço CalculationHistoryApplication ao contêiner de injeção de dependência
+        builder.Services.AddScoped<CalculationHistoryApplication>(); // Adicionando o serviço CalculationHistoryApplication ao contêiner de injeção de dependência
 
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi(options =>
@@ -54,7 +56,6 @@ public partial class Program
     };
 });
         var app = builder.Build();
-
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
