@@ -26,6 +26,7 @@ public partial class Program
         builder.Services.AddScoped<CalculationHistoryApplication>();// Adicionando o serviço CalculationHistoryApplication ao contêiner de injeção de dependência
         builder.Services.AddScoped<CalculationHistoryApplication>(); // Adicionando o serviço CalculationHistoryApplication ao contêiner de injeção de dependência
         builder.Services.AddScoped<UserApplication>();// Adicionando o serviço UserApplication ao contêiner de injeção de dependência
+        builder.Services.AddTransient<GlobalExceptionHandler>();// Adicionando o middleware GlobalExceptionHandler ao contêiner de injeção de dependência
 
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi(options =>
@@ -68,6 +69,7 @@ public partial class Program
         }
 
         app.UseHttpsRedirection();
+        app.UseMiddleware<GlobalExceptionHandler>();// Adicionando o middleware GlobalExceptionHandler ao pipeline de requisições
         app.UseAuthentication();
         app.UseAuthorization();
 
