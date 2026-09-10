@@ -1,4 +1,5 @@
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
@@ -31,9 +32,11 @@ public partial class Program
         builder.Services.AddTransient<GlobalExceptionHandler>();// Adicionando o middleware GlobalExceptionHandler ao contêiner de injeção de dependência
 
         // Adicionando os validadores do FluentValidation ao contêiner de injeção de dependência
+        builder.Services.AddFluentValidationAutoValidation();
+        builder.Services.AddValidatorsFromAssemblyContaining<UserInputModelValidator>();
         builder.Services.AddValidatorsFromAssemblyContaining<UserInputModelValidator>();
 
-        
+
         builder.Services.AddOpenApi(options =>
         { 
         options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
