@@ -34,7 +34,10 @@ public partial class Program
         // Adicionando os validadores do FluentValidation ao contêiner de injeção de dependência
         builder.Services.AddFluentValidationAutoValidation();
         builder.Services.AddValidatorsFromAssemblyContaining<UserInputModelValidator>();
-        builder.Services.AddValidatorsFromAssemblyContaining<UserInputModelValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<UpdateNameDtoValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<UpdatePasswordDtoValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<UpdateEmailDtoValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestDtoValidator>();
 
 
         builder.Services.AddOpenApi(options =>
