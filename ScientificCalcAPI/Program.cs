@@ -1,9 +1,11 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 using ScientificCalcApi.Application.Applications;
 using ScientificCalcApi.Application.Services;
+using ScientificCalcApi.Application.Validators;
 using ScientificCalcAPI.Filters;
 using ScientificCalculatorApi.Infraestructure;
 using System.Text;
@@ -28,7 +30,10 @@ public partial class Program
         builder.Services.AddScoped<UserApplication>();// Adicionando o serviço UserApplication ao contêiner de injeção de dependência
         builder.Services.AddTransient<GlobalExceptionHandler>();// Adicionando o middleware GlobalExceptionHandler ao contêiner de injeção de dependência
 
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+        // Adicionando os validadores do FluentValidation ao contêiner de injeção de dependência
+        builder.Services.AddValidatorsFromAssemblyContaining<UserInputModelValidator>();
+
+        
         builder.Services.AddOpenApi(options =>
         { 
         options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
