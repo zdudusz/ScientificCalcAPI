@@ -17,7 +17,7 @@ namespace ScientificCalcAPI.Controllers
         private readonly LoginApplication _loginApplication;
         private readonly TokenService _tokenService;
 
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto _loginRequestDto)
         {
            var user = await _loginApplication.LoginAsync(_loginRequestDto.Email,_loginRequestDto.Password);
