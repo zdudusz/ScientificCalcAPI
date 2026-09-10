@@ -25,7 +25,7 @@ namespace ScientificCalcApi.Application.Applications
             }
             else
             {
-                throw new Exception("User not found");
+                throw new KeyNotFoundException("User not found");
             }
         }
 

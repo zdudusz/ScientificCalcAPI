@@ -19,10 +19,10 @@ namespace ScientificCalcApi.Application.Applications
             var user = await _userRepository.BuscarPorEmail(email);
             if (user == null)
             {
-                throw new Exception("Usuário não encontrado.");
+                throw new KeyNotFoundException("Usuário não encontrado.");
             }
             if (!BCrypt.Net.BCrypt.Verify(password, user.PasswordHash)) { 
-            throw new Exception("Senha incorreta.");
+            throw new UnauthorizedAccessException("Senha incorreta.");
             }
             return user;
         }
