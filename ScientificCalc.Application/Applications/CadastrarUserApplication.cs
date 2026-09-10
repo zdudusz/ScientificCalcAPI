@@ -14,14 +14,20 @@ namespace ScientificCalcApi.Application.Applications
         
         public async Task<int> CadastrarAsync(UserInputModel userInputModel) 
         {
-            var passwordHash = BCrypt.Net.BCrypt.HashPassword(userInputModel.Password); // Hashing da senha do usuário usando BCrypt
+            if (await _userRepository.BuscarPorEmail(userInputModel.Email) == null) //Validação para verificar se o email já está cadastrado no banco de dados
+            {
+                var passwordHash = BCrypt.Net.BCrypt.HashPassword(userInputModel.Password); // Hashing da senha do usuário usando BCrypt
 
-            var user = new User(
-                userInputModel.Name, 
-                userInputModel.Email, 
-                passwordHash);
-            
-            return await _userRepository.CadastrarAsync(user);
+                var user = new User(
+                    userInputModel.Name,
+                    userInputModel.Email,
+                    passwordHash);
+                return await _userRepository.CadastrarAsync(user);
+            }
+            else
+            {
+                throw new InvalidOperationException("Email já cadastrado");
+            }
         }
      
     }

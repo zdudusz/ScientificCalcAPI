@@ -28,6 +28,7 @@ namespace ScientificCalcAPI.Filters
                     ArgumentException => 400,
                      UnauthorizedAccessException => 401,
                      KeyNotFoundException => 404,
+                     InvalidOperationException => 400,
                      _ => 500
                  };
                 await context.Response.WriteAsJsonAsync(new
