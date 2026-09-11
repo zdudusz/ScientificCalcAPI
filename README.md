@@ -1,16 +1,18 @@
 <div align="center">
-  <h1> Scientific Calc API</h1>
+  <h1>Scientific Calc API</h1>
 </div>
 
 > API REST de calculadora científica com autenticação JWT, histórico de cálculos e gerenciamento de conta.
 
-
+<div align="center">
+  <h1> 
  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL Logo" width="50"> &nbsp;
  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/entityframeworkcore/entityframeworkcore-original.svg" alt="EntityFrameworkCoreLogo" width="50"/> &nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="csharpLogo" width="50"/> &nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg" width = "50"/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg" width = "50" /> &nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openapi/openapi-original-wordmark.svg" width = "70"/> &nbsp;
-
+<h1>
+</div>
 ## 📋 Pré-requisitos
 
 - Docker
