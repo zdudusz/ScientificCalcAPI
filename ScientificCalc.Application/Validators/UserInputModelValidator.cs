@@ -9,7 +9,7 @@ namespace ScientificCalcApi.Application.Validators
     public class UserInputModelValidator : AbstractValidator<UserInputModel>
     {
         public UserInputModelValidator() 
-        {
+        {//Regras de validação para atribuir valores aos atributos dos DTOs
             RuleFor(user => user.Name)
                 .NotEmpty().WithMessage("O campo nome não pode ser vazio")
                 .MinimumLength(3).WithMessage("O nome deve ter no minimo 3 caracteres");
